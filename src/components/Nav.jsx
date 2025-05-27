@@ -20,7 +20,7 @@ const Nav = () => {
         <div>
 <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
   <div className="flex-1">
-    <a className="btn btn-ghost text-primary gap-0 normal-case text-2xl">Byte<span className="text-secondary">Blaze</span></a>
+    <NavLink to='/' className="btn btn-ghost text-primary gap-0 normal-case text-2xl">Byte<span className="text-secondary">Blaze</span></NavLink>
   </div>
   <div className="flex-none gap-4">
     <ul className="menu menu-horizontal px-1 gap-4">
