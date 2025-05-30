@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const Author = () => {
-    return (
-        <div>
-            <h1>hello author</h1>
-        </div>
-    );
+  const blog = useLoaderData();
+  return (
+    <div>
+      <h1>{blog.title}</h1>
+    </div>
+  );
 };
 
 export default Author;
