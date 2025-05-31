@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import errorImage from "../assets/404.jpg";
 import { MdDeleteForever } from "react-icons/md";
 
-const Blog = ({ blog, deleteButton }) => {
+const Blog = ({ blog, deleteButton, handleDelete }) => {
   const { cover_image, title, description, published_timestamp, id } = blog;
   return (
-    <div className="relative max-w-sm mx-auto ">
+    <div className="relative  ">
       <Link
         to={`/blog/${id}`}
-        className="block group hover:no-underline focus:no-underline  transition border-2 border-gray-300 rounded-xl p-2 hover:scale-105 hover:border-gray-400"
+        className="block max-w-sm mx-auto group hover:no-underline focus:no-underline  transition border-2 border-gray-300 rounded-xl p-2 hover:scale-105 hover:border-gray-400"
       >
         <img
           role="presentation"
@@ -25,7 +25,10 @@ const Blog = ({ blog, deleteButton }) => {
         </div>
       </Link>
       {deleteButton && (
-        <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md cursor-pointer hover:bg-red-50">
+        <div
+          onClick={() => handleDelete(id)}
+          className="absolute -top-5 -right-5 bg-white rounded-full p-1 shadow-md cursor-pointer hover:bg-red-50"
+        >
           <MdDeleteForever size={30} className="text-red-500" />
         </div>
       )}
